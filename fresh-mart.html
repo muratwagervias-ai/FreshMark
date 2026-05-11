@@ -1,0 +1,107 @@
+ <!DOCTYPE html> 
+<head> 
+  <title>FreshMart Billing System</title>
+  <link rel="stylesheet" href="fersh-mart.css">
+
+ <script src="fresh-mart.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>🛒 FreshMart</h1>
+      <h2>Billing System</h2>
+    </div>
+
+    <div class="content"> 
+      <div class="card">
+        <h2>Add Item</h2>
+
+        <div class="form-group">
+          <label>Item Name</label>
+
+          <select id="itemSelect">
+            <option value="">Select Item</option>
+            <option value="Rice" data-price="2500">Rice</option>
+            <option value="Sugar" data-price="1800">Sugar</option>
+            <option value="Milk" data-price="1200">Milk</option>
+            <option value="Bread" data-price="900">Bread</option>
+            <option value="Soap" data-price="700">Soap</option>
+          </select>
+        </div>
+
+        <label>Price (RWF)</label>  
+<input type="number" id="price">
+        <div class="form-group">
+          <label>Quantity</label>
+          <input type="number" id="quantity" value="1" min="1">
+        </div>
+
+        <button class="btn-add" onclick="addItem()">Add Item</button><br><br>
+        <div class="pop">
+          <h1 class="pop1">Available Items</h1>
+          
+         <div class="row"><span>Bread</span><span>800 RWF</span></div>
+         <div class="row"><span>Milk</span><span>1200 RWF</span></div>
+         <div class="row"><span>Rice</span><span>2000 RWF</span></div>
+         <div class="row"><span>Sugar</span><span>1500 RWF</span></div>
+         <div class="row"><span>Oil</span><span>2500 RWF</span></div>
+          
+         
+        </div>
+       
+      </div> 
+      <div class="card">
+        <h2>Bill</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+
+          <tbody id="billBody">
+              
+            <tr class="empty-row">
+              <td colspan="5" class="empty"> 🛒 No items added yet.</td>
+            </tr>
+   
+          </tbody>
+        </table>
+
+        <div class="summary">
+          <div>
+            <strong>Total Amount:</strong>
+            <span id="totalAmount">0</span> RWF
+          </div>
+
+          <div>
+            <strong>Amount Paid:</strong>
+            <input type="number" id="amountPaid" value="0" min="0">
+          </div>
+
+          <div class="total">
+            Change:
+            <span id="change">0</span>
+            <div>
+             <button class="btn-clear" onclick="clearAll()">calculate Change</button>
+             <button class="btn-close" onclick="clearAll()">Clear All</button>
+             </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+
+</body>
+</html>
